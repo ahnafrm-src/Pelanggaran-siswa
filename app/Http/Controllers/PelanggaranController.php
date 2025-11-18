@@ -92,15 +92,14 @@ class PelanggaranController extends Controller
         $pelanggaran = Pelanggaran::findOrFail($id);
 
         $request->validate([
-            'nis' => 'required|unique:siswa,nis,' . $pelanggaran->id,
-            'nama' => 'required',
-            'kelamin' => 'required',
-            'agama' => 'required',
-            'alamat' => 'required',
-            'kelas_id' => 'required'
+            'foto' => 'nullable',
+            'tanggal' => 'required|date',
+            'jenis_id' => 'required',
+            'siswa_id' => 'required',
+            'user_id' => 'required',
         ]);
 
-        $data = $request->only(['nis', 'nama', 'kelamin', 'agama', 'alamat', 'kelas_id']);
+        $data = $request->only(['tanggal', 'jenis_id', 'siswa_id', 'user_id']);
         if($request->hasFile('foto')){
             $data['foto'] = $request->file('foto')->store('foto-siswa', 'public');
         };

@@ -7,8 +7,9 @@
 <div>
     <h1>Edit Pelanggaran</h1>
 
-    <form action="{{ route('pelanggaran.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('pelanggaran.update', $pelanggaran->id) }}" method="post" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
         <div>
             <label for="jenis">jenis:</label>
             <select name="jenis_id" id="jenis">

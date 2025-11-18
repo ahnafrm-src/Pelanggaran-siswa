@@ -8,6 +8,6 @@
     </div>
 
     <div style="margin:20px auto; width:fit-content;">
-        <h4 style="margin:0;font-size:5em">Halo {{ session('user_name') }}, Sebagai {{ session('user_level') }}</h4>
+        <h4 style="margin:0;font-size:2em">Halo {{ session('user_name') }}, Sebagai {{ session('user_level') }}</h4>
     </div>
 @endsection

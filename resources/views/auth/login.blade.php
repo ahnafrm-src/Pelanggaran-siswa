@@ -13,7 +13,7 @@
         <form action="{{ route('login.process') }}" method="post">
             @csrf
             <div class="mb-3">
-                <label for="username" class="form-label">username:</label>
+                <label for="username" class="form-label">Username:</label>
                 <input type="text" id="username" name="username" required class="form-control">
             </div>
             <div class="mb-3">

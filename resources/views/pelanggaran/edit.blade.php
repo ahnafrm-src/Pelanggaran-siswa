@@ -29,7 +29,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="tanggal" class="form-label">tanggal:</label>
-                        <input type="date" name="tanggal" id="tanggal" required class="form-control" value="{{ $pelanggaran->tanggal }}">
+                        <input type="date" name="tanggal" id="tanggal" class="form-control" value="{{ $pelanggaran->tanggal }}">
                     </div>
                     <div class="col-sm-3">
                         <label for="user" class="form-label">user:</label>

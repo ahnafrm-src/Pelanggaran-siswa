@@ -6,7 +6,7 @@
 
     <div>
         <div style="background: #435663; color: #FFF8D4;padding:5px">
-            <h1 style="margin-left: 20px">{{ $pelanggarans->JenisPelanggaran->jenis }} (poin: {{ $pelanggarans->JenisPelanggaran->poin }})</h1>
+            <h1 style="margin-left: 20px">{{ $pelanggarans->JenisPelanggaran->jenis }} (Poin: {{ $pelanggarans->JenisPelanggaran->poin }})</h1>
         </div>
         <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding:10px;widht:300px; margin: 10px auto;">
             <div style="margin-left: 20px">

@@ -22,13 +22,14 @@
             text-decoration: none;
             font-size: 18px;
             display: inline-block;
+            margin-left: 20px;
         }
     </style>
 </head>
 
 <body>
 
-    <div style="background:#313647; padding:25px;">
+    <div style="background:#313647; padding:10px;">
         @if(session('user_id'))
             @if(session('user_level') == 'admin')
                 <a href="{{ route('home') }}" class="nav">Home</a>

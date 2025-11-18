@@ -10,6 +10,14 @@
         </div>
         <div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);padding:10px;widht:300px; margin: 10px auto;">
             <div style="margin-left: 20px">
+                @if ($pelanggarans->foto)
+                    <img src="{{ asset('storage/' . $pelanggarans->foto) }}" alt="{{ $pelanggarans->JenisPelanggaran->jenis }}"
+                        width="200">
+                @else
+                    -
+                @endif
+            </div>
+            <div style="margin-left: 20px">
                 <strong>Deskripsi Pelanggaran:</strong>
                 {{ $pelanggarans->JenisPelanggaran->keterangan }}
             </div>
@@ -24,15 +32,6 @@
             <div style="margin-left: 20px">
                 <strong>Tanggal:</strong>
                 {{ $pelanggarans->tanggal }}
-            </div>
-            <div style="margin-left: 20px">
-                <strong>Foto:</strong>
-                @if ($pelanggarans->foto)
-                    <img src="{{ asset('storage/' . $pelanggarans->foto) }}" alt="{{ $pelanggarans->JenisPelanggaran->jenis }}"
-                        width="200">
-                @else
-                    -
-                @endif
             </div>
             <div style="margin-left: 20px">
                 <strong>User:</strong>

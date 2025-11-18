@@ -9,6 +9,7 @@
 
     <form action="{{ route('jenis.update' , $jenis->id) }}" method="post">
         @csrf
+        @method('PUT')
         <div>
             <label for="jenis">jenis:</label>
             <input type="text" name="jenis" id="jenis" required value="{{ $jenis->jenis }}"> 

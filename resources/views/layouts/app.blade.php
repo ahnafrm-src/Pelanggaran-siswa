@@ -33,6 +33,16 @@
             display: inline-block;
             margin-left: 35em;
         }
+
+        .profile-1{
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
+            margin-left: 50em;
+
+        }
     </style>
 </head>
 
@@ -53,6 +63,7 @@
                 <a href="{{ route('home') }}" class="nav">Home</a>
                 <a href="{{ route('pelanggaran.index') }}" class="nav">Pelanggaran</a>
                 <a href="{{ route('logout') }}" class="nav">Logout</a>
+                <a class="profile-1">{{ session('user_name') }}</a>
             @endif
         @else
             <a href="{{ route('login') }}" class="nav">Login</a>

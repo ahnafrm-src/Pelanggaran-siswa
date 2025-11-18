@@ -7,7 +7,7 @@
 <div>
     <h1>Edit Siswa</h1>
 
-    <form action="{{ route('siswa.update', $siswa->id) }}" method="post">
+    <form action="{{ route('siswa.update', $siswa->id) }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('PUT')
         <div>

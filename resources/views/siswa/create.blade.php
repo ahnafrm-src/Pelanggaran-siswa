@@ -7,7 +7,7 @@
 <div>
     <h1>Tambah Siswa</h1>
 
-    <form action="{{ route('siswa.store') }}" method="post">
+    <form action="{{ route('siswa.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div>
             <label for="nis">nis:</label>

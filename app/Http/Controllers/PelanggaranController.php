@@ -47,7 +47,16 @@ class PelanggaranController extends Controller
             'user_id' => 'required',
         ]);
 
-        Pelanggaran::create($request->all());
+        $data = $request->file('foto')->store('foto-siswa', 'public');
+
+
+        Pelanggaran::create([
+            'foto' => $data,
+            'tanggal' => $request->tanggal,
+            'jenis_id' => $request->jenis_id,
+            'siswa_id' => $request->siswa_id,
+            'user_id' => $request->user_id,
+        ]);
         return redirect()->route('pelanggaran.index')->with('success', 'Pelanggaran berhasil dibuat. ');
     }
 
@@ -81,7 +90,21 @@ class PelanggaranController extends Controller
     {
         //
         $pelanggaran = Pelanggaran::findOrFail($id);
-        $pelanggaran->update($request->all());
+
+        $request->validate([
+            'nis' => 'required|unique:siswa,nis,' . $pelanggaran->id,
+            'nama' => 'required',
+            'kelamin' => 'required',
+            'agama' => 'required',
+            'alamat' => 'required',
+            'kelas_id' => 'required'
+        ]);
+
+        $data = $request->only(['nis', 'nama', 'kelamin', 'agama', 'alamat', 'kelas_id']);
+        if($request->hasFile('foto')){
+            $data['foto'] = $request->file('foto')->store('foto-siswa', 'public');
+        };
+        $pelanggaran->update($data);
         return redirect()->route('pelanggaran.index')->with('success', 'Pelanggaran berhasil diperbarui.');
     }
 

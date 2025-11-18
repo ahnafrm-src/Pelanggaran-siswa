@@ -7,7 +7,7 @@
 <div>
     <h1>Tambah Pelanggaran</h1>
 
-    <form action="{{ route('pelanggaran.store') }}" method="post">
+    <form action="{{ route('pelanggaran.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div>
             <label for="jenis">jenis:</label>

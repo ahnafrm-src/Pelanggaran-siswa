@@ -6,7 +6,7 @@
 
  <div>
         <div>
-            <h1>Daftar kelas</h1>
+            <h1>Daftar Pelanggaran</h1>
         </div>
 
         @if(session('user_kelas') == 'admin')
@@ -32,7 +32,7 @@
                         <th>tanggal</th>
                         <th>foto</th>
                         <th>user</th>
-                        @if (session('user_kelas') == 'admin')
+                        @if (session('user_level') == 'admin')
                         <th>Aksi</th>
                         @endif
                     </tr>

@@ -24,6 +24,15 @@
             display: inline-block;
             margin-left: 20px;
         }
+
+        .profile{
+            color: white;
+            margin-right: 15px;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
+            margin-left: 35em;
+        }
     </style>
 </head>
 
@@ -39,6 +48,7 @@
                 <a href="{{ route('jenis.index') }}" class="nav">Jenis</a>
                 <a href="{{ route('pelanggaran.index') }}" class="nav">Pelanggaran</a>
                 <a href="{{ route('logout') }}" class="nav">Logout</a>
+                <a class="profile">{{ session('user_name') }}</a>
             @else
                 <a href="{{ route('home') }}" class="nav">Home</a>
                 <a href="{{ route('pelanggaran.index') }}" class="nav">Pelanggaran</a>

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div>
+<div style="margin-left:20px">
     <h1>Tambah Siswa</h1>
 
     <form action="{{ route('siswa.store') }}" method="post" enctype="multipart/form-data">

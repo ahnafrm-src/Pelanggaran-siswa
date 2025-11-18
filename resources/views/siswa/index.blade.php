@@ -26,13 +26,13 @@
                 <thead>
                     <tr>
                         <th >No</th>
+                        <th>foto</th>
                         <th>nis</th>
                         <th>nama</th>
                         <th>kelas</th>
                         <th>kelamin</th>
                         <th>agama</th>
                         <th>alamat</th>
-                        <th>foto</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -40,12 +40,6 @@
                     @foreach ($siswas as $siswa)
                         <tr>
                             <td >{{ $loop->iteration }}</td>
-                            <td>{{ $siswa->nis }}</td>
-                            <td>{{ $siswa->nama }}</td>
-                            <td>{{ $siswa->Kelas->kelas }}</td>
-                            <td>{{ $siswa->kelamin }}</td>
-                            <td>{{ $siswa->agama }}</td>
-                            <td>{{ $siswa->alamat }}</td>
                             <td>
                                 @if ($siswa->foto == null)
                                     -
@@ -54,6 +48,12 @@
                                 @endif
                                 
                             </td>
+                            <td>{{ $siswa->nis }}</td>
+                            <td>{{ $siswa->nama }}</td>
+                            <td>{{ $siswa->Kelas->kelas }}</td>
+                            <td>{{ $siswa->kelamin }}</td>
+                            <td>{{ $siswa->agama }}</td>
+                            <td>{{ $siswa->alamat }}</td>
                             <th>
                                 <a href="{{ route('siswa.edit', $siswa->id) }}">Edit</a>
                                 <form action="{{ route('siswa.destroy', $siswa->id) }}" method="post">

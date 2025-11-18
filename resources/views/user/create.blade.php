@@ -21,9 +21,12 @@
             <label for="nama" class="form-label">Nama:</label>
             <input type="text" id="nama" name="nama" required class="form-control">
         </div>
-        <div class="mb-3">
+        <div class="col-sm-3">
             <label for="kelamin" class="form-label">Kelamin:</label>
-            <input type="text" name="kelamin" id="kelamin" class="form-control">
+            <select name="kelamin" class="form-select">
+                <option value="laki-laki">Laki-laki</option>
+                <option value="perempuan">Perempuan</option>
+            </select>
         </div>
         <div class="mb-3">
             <label for="alamat" class="form-label">Alamat:</label>

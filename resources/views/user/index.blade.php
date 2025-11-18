@@ -9,9 +9,9 @@
             <h1 style="margin-left: 20px">Daftar User</h1>
         </div>
 
-        {{-- <div>
+        <div>
             <a href="{{ route('user.create') }}">Tambah User</a>
-        </div> --}}
+        </div>
         
         
         <div>

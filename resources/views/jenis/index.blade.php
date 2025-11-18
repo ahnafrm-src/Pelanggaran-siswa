@@ -5,8 +5,8 @@
 @section('content')
 
  <div>
-        <div>
-            <h1>Daftar kelas</h1>
+        <div style="background: #435663; color: #FFF8D4;padding:5px">
+            <h1 style="margin-left: 20px">Daftar kelas</h1>
         </div>
 
         <div>

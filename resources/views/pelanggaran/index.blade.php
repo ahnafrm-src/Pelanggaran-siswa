@@ -5,17 +5,18 @@
 @section('content')
 
     <div>
-        <div>
-            <h1>Daftar Pelanggaran</h1>
+        <div style="background: #435663; color: #FFF8D4;padding:5px">
+            <h1 style="margin-left: 25px">Daftar Pelanggaran</h1>
         </div>
 
-        @if(session('user_level') == 'admin')
-            <div>
-                <a href="{{ route('pelanggaran.create') }}">Tambah Pelanggaran</a>
+        <div style="margin: 25px">
+            @if(session('user_level') == 'admin')
+            <div class="btn btn-success">
+                <a href="{{ route('pelanggaran.create') }}"  style="color:#FFF8D4;text-decoration:none">Tambah Pelanggaran</a>
             </div>
         @endif
 
-        <div>
+        <div style="margin-top: 20px">
 
             @if (session('success'))
                 <div style="color: green;">
@@ -23,9 +24,9 @@
                 </div>
             @endif
 
-            <table border="1" cellpadding="10" cellspacing="0">
-                <thead>
-                    <tr>
+            <table cellpadding="10" cellspacing="0" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);">
+                <thead style="background: #313647">
+                    <tr style="color:#FFF8D4">
                         <th>No</th>
                         <th>jenis Pelanggaran</th>
                         <th>Siswa</th>
@@ -42,7 +43,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td><a
-                                    href="{{ route('pelanggaran.show', $pelanggaran->id) }}">{{ $pelanggaran->JenisPelanggaran->jenis }}</a>
+                                style="text-decoration:none;color:#435663" href="{{ route('pelanggaran.show', $pelanggaran->id) }}">{{ $pelanggaran->JenisPelanggaran->jenis }}</a>
                             </td>
                             <td>{{ $pelanggaran->SiswaPelanggaran->nama }}</td>
                             <td>{{ $pelanggaran->tanggal }}</td>
@@ -57,11 +58,11 @@
                             <td>{{ $pelanggaran->UserPelanggaran->nama }}</td>
                             @if(session('user_level') == 'admin')
                                 <th>
-                                    <a href="{{ route('pelanggaran.edit', $pelanggaran->id) }}">Edit</a>
-                                    <form action="{{ route('pelanggaran.destroy', $pelanggaran->id) }}" method="post">
+                                    <a href="{{ route('pelanggaran.edit', $pelanggaran->id) }}" style="display:inline-block" class="btn btn-danger">Edit</a>
+                                    <form action="{{ route('pelanggaran.destroy', $pelanggaran->id) }}" method="post" style="display:inline-block">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit">Delete</button>
+                                        <button type="submit"  class="btn btn-warning">Delete</button>
                                     </form>
                                 </th>
                             @endif
@@ -70,6 +71,8 @@
                 </tbody>
             </table>
         </div>
+        </div>
+        
     </div>
 
 @endsection

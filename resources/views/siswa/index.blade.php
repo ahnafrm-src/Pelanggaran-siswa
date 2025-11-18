@@ -5,8 +5,8 @@
 @section('content')
 
  <div>
-        <div>
-            <h1>Daftar Siswa</h1>
+        <div style="background: #435663; color: #FFF8D4;padding:5px">
+            <h1 style="margin-left: 20px">Daftar Siswa</h1>
         </div>
 
         <div>
@@ -50,7 +50,7 @@
                                 @if ($siswa->foto == null)
                                     -
                                 @else
-                                    <img src="{{ asset('storage/' . $siswa->foto) }}" alt="{{ $siswa->nama }}" width="100">
+                                    <img src="{{ asset('storage/' . $siswa->foto) }}" alt="{{ $siswa->nama }}" width="50">
                                 @endif
                                 
                             </td>
